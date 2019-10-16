@@ -76,7 +76,7 @@ class ViewModel {
     }
     
     func isTouchableCell(path indexPath: IndexPath) -> Bool {
-        guard let section = SectionType(rawValue: indexPath.section) else { return false }
+        let section = makeSectionTypes()[indexPath.section]
         return section == .itemRanking && indexPath.row != 0
     }
     
